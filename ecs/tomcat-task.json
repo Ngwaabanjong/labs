@@ -1,0 +1,36 @@
+{
+    "containerDefinitions": [
+      {
+        "logConfiguration": {
+          "logDriver": "awslogs",
+          "options": {
+            "awslogs-group": "/ecs/abc-container-logs",
+            "awslogs-region": "us-east-1",
+            "awslogs-stream-prefix": "ecs"
+          }
+        },
+        "portMappings": [
+          {
+              "containerPort": 61000,
+              "hostPort": 61000,
+              "protocol": "tcp"
+          }
+      ],
+        "cpu": 1024,
+        "memory": 256,
+        "image": "ngwaabanjong/abc-prj", #did not work because of the / in the image
+        "essential": true,
+        "name": "abc-webserver"
+      }
+    ],
+    "taskRoleArn": "arn:aws:iam::068748606369:role/prj-ecs-task-execution-role",
+    "executionRoleArn": "arn:aws:iam::068748606369:role/prj-ecs-task-execution-role",
+    "requiresCompatibilities": [
+        "FARGATE"
+     ], 
+    "memory": "2048",
+    "family": "abc-task",
+    "networkMode": "awsvpc",
+    "cpu": "1024"
+  }
+

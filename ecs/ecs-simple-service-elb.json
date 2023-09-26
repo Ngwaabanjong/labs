@@ -1,0 +1,12 @@
+{
+    "serviceName": "tomcat-service-elb",
+    "taskDefinition": "Cluster-01",
+    "loadBalancers": [
+        {
+            "targetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:068748606369:loadbalancer/app/tomcat-test/58545578dc337d1c",
+            "containerName": "tomcat-webserver",
+            "containerPort": 8080
+        }
+    ],
+    "desiredCount": 10
+}

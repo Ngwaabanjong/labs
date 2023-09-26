@@ -1,0 +1,36 @@
+{
+    "containerDefinitions": [
+      {
+        "logConfiguration": {
+          "logDriver": "awslogs",
+          "options": {
+            "awslogs-group": "/ecs/wp-container-logs",
+            "awslogs-region": "us-east-1",
+            "awslogs-stream-prefix": "ecs"
+          }
+        },
+        "portMappings": [
+          {
+              "containerPort": 80,
+              "hostPort": 8080,
+              "protocol": "tcp"
+          }
+      ],
+        "cpu": 1024,
+        "memory": 256,
+        "image": "068748606369.dkr.ecr.us-east-1.amazonaws.com/wordpress:latest", 
+        "essential": true,
+        "name": "wpapp"
+      }
+    ],
+    "taskRoleArn": "arn:aws:iam::068748606369:role/banjongs-uat-assume2-service-role",
+    "executionRoleArn": "arn:aws:iam::068748606369:role/prj-ecs-task-execution-role",
+    "requiresCompatibilities": [
+        "FARGATE"
+     ], 
+    "memory": "2048",
+    "family": "wp-task",
+    "networkMode": "awsvpc",
+    "cpu": "1024"
+  }
+

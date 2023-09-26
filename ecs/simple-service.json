@@ -1,0 +1,20 @@
+{  
+    "cluster": "Clusster-01",
+    "serviceName": "simple-service2",
+    "taskDefinition": "tomcat-task",
+    "desiredCount": 2,
+    "launchType": "FARGATE",
+    "networkConfiguration": {
+      "awsvpcConfiguration": {
+        "assignPublicIp": "ENABLED",
+        "securityGroups": [
+            "sg-0b52fa29523a310b5"
+          ],
+        "subnets": [
+            "subnet-07833c4af7572bcad",
+            "subnet-0ad59c546d76a1864"
+          ]
+      }
+    }
+  }
+  

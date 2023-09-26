@@ -1,0 +1,27 @@
+{
+    "cluster": "wpapp",
+    "serviceName": "wp-service-elb",
+    "launchType": "FARGATE",
+    "networkConfiguration": {
+      "awsvpcConfiguration": {
+        "assignPublicIp": "ENABLED",
+        "securityGroups": [
+          "sg-09bae193ac91f54a7"
+        ],
+        "subnets": [
+          "subnet-07833c4af7572bcad",
+          "subnet-0ad59c546d76a1864"
+        ]
+      }
+    },
+    "taskDefinition": "wp-task",
+    "desiredCount": 2,
+    "loadBalancers": [
+      {
+        "targetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:068748606369:loadbalancer/app/tomcat-test/58545578dc337d1c",
+        "containerName": "wpapp",
+        "containerPort": 8080
+      }
+    ]
+}
+

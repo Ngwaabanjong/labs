@@ -1,0 +1,36 @@
+{
+    "containerDefinitions": [
+      {
+        "logConfiguration": {
+          "logDriver": "awslogs",
+          "options": {
+            "awslogs-group": "/ecs/msql-container-logs",
+            "awslogs-region": "us-east-1",
+            "awslogs-stream-prefix": "ecs"
+          }
+        },
+        "portMappings": [
+          {
+              "containerPort": 3306,
+              "hostPort": 3306,
+              "protocol": "tcp"
+          }
+      ],
+        "cpu": 1024,
+        "memory": 256,
+        "image": "068748606369.dkr.ecr.us-east-1.amazonaws.com/mysql:latest", 
+        "essential": true,
+        "name": "wpapp"
+      }
+    ],
+    "taskRoleArn": "arn:aws:iam::068748606369:role/banjongs-uat-assume2-service-role",
+    "executionRoleArn": "arn:aws:iam::068748606369:role/prj-ecs-task-execution-role",
+    "requiresCompatibilities": [
+        "FARGATE"
+     ], 
+    "memory": "2048",
+    "family": "msql-db-task",
+    "networkMode": "awsvpc",
+    "cpu": "1024"
+  }
+

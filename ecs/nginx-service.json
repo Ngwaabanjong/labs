@@ -1,0 +1,52 @@
+{
+    "cluster": "tutorial",
+    "deploymentConfiguration": {
+        "maximumPercent": 200,
+        "minimumHealthyPercent": 0
+    },
+    "deploymentController": {
+        "type": "ECS"
+    },
+    "desiredCount": 1,
+    "enableECSManagedTags": true,
+    "enableExecuteCommand": true,
+    "launchType": "FARGATE",
+    "networkConfiguration": {
+        "awsvpcConfiguration": {
+            "assignPublicIp": "ENABLED",
+            "securityGroups": [
+                "sg-EXAMPLE"
+            ],
+            "subnets": [
+                "subnet-EXAMPLE",
+                "subnet-EXAMPLE",
+                "subnet-EXAMPLE"
+            ]
+           }
+    },
+    "platformVersion": "LATEST",
+    "propagateTags": "SERVICE",
+    "serviceName": "service-connect-nginx-service",
+    "serviceConnectConfiguration": {
+        "enabled": true,
+        "services": [
+            {
+                "portName": "nginx",
+                "clientAliases": [
+                    {
+                        "port": 80
+                    }
+                ]
+            }
+        ],
+        "logConfiguration": {
+            "logDriver": "awslogs",
+            "options": {
+                "awslogs-group": "/ecs/service-connect-proxy",
+                "awslogs-region": "us-west-2",
+                "awslogs-stream-prefix": "service-connect-proxy"
+            }
+        }
+    },
+    "taskDefinition": "service-connect-nginx"
+}
