@@ -1,4 +1,4 @@
-# Running Script to install gh for Linux or windows
+# Running Script to install 'gh auth login' for Linux or windows
 - $ chmod 755 gh-auth-login.sh
 - $ ./gh-auth-login.sh
 - $ gh version
