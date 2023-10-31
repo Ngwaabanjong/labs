@@ -3,7 +3,7 @@ Sudo wget https://github.com/Ngwaabanjong/labs/blob/main/Docker/installDocker.sh
 sudo chmod 755 /opt/installDocker.sh
 sudo bash /opt/installDocker.sh
 
-sudo apt install docker-compose
+- $ sudo apt install docker-compose
 
-Docker --version
-Docker-compose --version
+- $ docker --version
+- $ docker-compose --version
