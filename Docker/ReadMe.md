@@ -26,7 +26,7 @@ sudo usermod -aG docker $USER
 # logout of instance and login again
 ```
 
-**Give user ownership to  avoid sudo docker:
+**Give user ownership to  avoid sudo docker:**
 
 **bash:**
 ```
