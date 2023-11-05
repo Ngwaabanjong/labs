@@ -1,8 +1,9 @@
 # INSTALL Docker WITH SCRIPT on all Linux Engines:
 ``````
-sudo wget https://github.com/Ngwaabanjong/labs/blob/main/Docker/installDocker.sh -P /opt
-sudo chmod 755 /opt/installDocker.sh
-sudo bash /opt/installDocker.sh
+sudo wget https://github.com/Ngwaabanjong/labs/blob/main/Docker/installDocker.sh -P /tmp
+sudo chmod 755 /tmp/installDocker.sh
+sudo bash /tmp/installDocker.sh
+
 ``````
 ## Check installation
 ``````
